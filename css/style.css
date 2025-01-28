@@ -8339,7 +8339,7 @@ h1, h2, h3, h4, h5,
   font-size: 20px;
   text-transform: uppercase; }
 
-.hero-wrap {
+/* .hero-wrap {
   width: 100%;
   height: 850px;
   position: inherit;
@@ -8372,7 +8372,65 @@ h1, h2, h3, h4, h5,
       opacity: .3;
       height: 600px; }
     .hero-wrap.hero-wrap-2 .slider-text {
-      height: 600px !important; }
+      height: 600px !important; } */
+
+      .hero-wrap {
+        width: 100%;
+        height: 850px; /* Default height for larger screens */
+        position: relative; /* Changed to relative for proper overlay positioning */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+      }
+      
+      .hero-wrap .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: '';
+        opacity: 0.3;
+        background: #000000;
+      }
+      
+      /* Medium devices (tablets) */
+      @media (max-width: 1199.98px) {
+        .hero-wrap {
+          height: 600px; /* Adjust height for medium devices */
+          background-position: center center !important; /* Center the background */
+        }
+        .hero-wrap .overlay {
+          height: 600px; /* Match overlay height */
+        }
+      }
+      
+      /* Small devices (phones) */
+      @media (max-width: 991.98px) {
+        .hero-wrap {
+          height: 400px; /* Further reduce height for small devices */
+        }
+        .hero-wrap .overlay {
+          height: 400px; /* Match overlay height */
+        }
+      }
+      
+      /* Extra small devices (very small phones) */
+      @media (max-width: 575.98px) {
+        .hero-wrap {
+          height: 300px; /* Adjust height for very small devices */
+        }
+        .hero-wrap .overlay {
+          height: 300px; /* Match overlay height */
+        }
+      }
+      
+      /* Optional: For very large screens */
+      @media (min-width: 1200px) {
+        .hero-wrap {
+          height: 850px; /* Maintain original height for large screens */
+        }
+      }
 
 .slider-text {
   height: 850px; }
